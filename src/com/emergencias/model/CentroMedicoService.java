@@ -17,13 +17,13 @@ public class CentroMedicoService {
             var inputStream = getClass().getResourceAsStream("/com/emergencias/model/centros_alicante.json");
 
             if (inputStream == null) {
-                System.err.println("❌ Error: El ClassLoader no encuentra el archivo en la ruta de paquetes.");
+                System.err.println("Error: El ClassLoader no encuentra el archivo en la ruta de paquetes.");
                 return null;
             }
 
             return mapper.readValue(inputStream, new TypeReference<List<CentroMedico>>() {});
         } catch (Exception e) {
-            System.err.println("❌ Error al procesar el JSON: " + e.getMessage());
+            System.err.println("Error al procesar el JSON: " + e.getMessage());
             return null;
         }
     }
