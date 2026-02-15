@@ -1,0 +1,67 @@
+[
+  {
+    "codigo":"030165",
+    "nombre":"Hospital General Universitario de Elda-Virgen de La Salud",
+    "direccion":"Carretera Sax S/N",
+    "CP":"03600",
+    "municipio":"Elda",
+    "telefono":"966 98 90 19",
+    "fax":"966 989 022",
+    "email":"helda_saip@gva.es",
+    "URL":"https://www.jjp.es/hospitales/hospital-general-universitario-de-elda",
+    "latitud":"38°29′37″N",
+    "longitud":"0°48′21″O"
+  },
+  {
+    "codigo":"030015",
+    "nombre":"Hospital General Universitario Dr. Balmis",
+    "direccion":"Avenida Pintor Baeza 12",
+    "CP":"03010",
+    "municipio":"Alicante",
+    "telefono":"965933000",
+    "fax":"965913496",
+    "email":"halicante_saip@gva.es",
+    "URL":"https://alicante.san.gva.es/es/contacto",
+    "latitud":"38°21'06″ N",
+    "longitud":"0° 28' 08″ O"
+  },
+  {
+    "codigo":"030152",
+    "nombre":"Hospital General Universitario de Elche",
+    "direccion":"Camí de l'Almàssera, 11",
+    "CP":"03203",
+    "municipio":"Elche",
+    "telefono":"966 61 69 00",
+    "fax":"966 61 67 07",
+    "email":"prensa_elx@gva.es",
+    "URL":"https://elche.san.gva.es/es/contacte",
+    "latitud":"38°16′01″N",
+    "longitud":"0°41′54″O"
+  },
+  {
+    "codigo":"030250",
+    "nombre":"Hospital Universitario Sant Joan d'Alacant",
+    "direccion":"Carretera Nacional 332, Alicante-Valencia, s/n",
+    "CP":"03550",
+    "municipio":"San Juan",
+    "telefono":"965 16 94 00",
+    "fax":"965 16 95 90",
+    "email":"hsanjuan_saip@gva.es",
+    "URL":"https://sanjuan.san.gva.es/pacientes/directorio-ubicaciones/",
+    "latitud":"31°32′15″S",
+    "longitud":"68°32′11″O"
+  },
+  {
+    "codigo":"030211",
+    "nombre":"Hospital Universitario Vega Baja",
+    "direccion":"Ctra. Orihuela – Almoradí S/N",
+    "CP":"03314",
+    "municipio":"Orihuela",
+    "telefono":"966 74 90 00",
+    "fax":"96 674 90 69",
+    "email":"",
+    "URL":"https://orihuela.san.gva.es/es/contacte",
+    "latitud":"38°05′08″N",
+    "longitud":"0°56′49″O"
+  }
+]
