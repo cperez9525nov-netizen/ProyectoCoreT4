@@ -6,8 +6,8 @@ public class CentroMedico {
     private String direccion;
     private int CP;
     private String municipio;
-    private int telefono;
-    private int FAX;
+    private long telefono;
+    private long FAX;
     private String email;
     private String URL;
     private String latitud;
@@ -49,16 +49,16 @@ public class CentroMedico {
     public void setMunicipio(String municipio) {
         this.municipio = municipio;
     }
-    public int getTelefono() {
+    public long getTelefono() {
         return telefono;
     }
-    public void setTelefono(int telefono) {
+    public void setTelefono(long telefono) {
         this.telefono = telefono;
     }
-    public int getFAX() {
+    public long getFAX() {
         return FAX;
     }
-    public void setFAX(int FAX) {
+    public void setFAX(long FAX) {
         this.FAX = FAX;
     }
     public String getEmail() {
