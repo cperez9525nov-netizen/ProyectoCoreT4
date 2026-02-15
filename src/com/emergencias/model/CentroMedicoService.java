@@ -13,7 +13,6 @@ public class CentroMedicoService {
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         try {
             // Buscamos el archivo como un "recurso" del sistema
-            // IMPORTANTE: Nota la "/" al principio y la ruta completa de paquetes
             var inputStream = getClass().getResourceAsStream("/com/emergencias/model/centros_alicante.json");
 
             if (inputStream == null) {
