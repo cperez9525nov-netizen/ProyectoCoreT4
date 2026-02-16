@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.emergencias.controller.EmergencyManager;
 import com.emergencias.model.CentroMedico;
-import com.emergencias.model.CentroMedicoService;
+import com.emergencias.controller.CentroMedicoService;
 
 public class Main {
     public static void main(String[] args) {

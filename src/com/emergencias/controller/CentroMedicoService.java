@@ -1,7 +1,8 @@
-package com.emergencias.model;
+package com.emergencias.controller;
 
-import java.io.File;
 import java.util.List;
+
+import com.emergencias.model.CentroMedico;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,7 +14,7 @@ public class CentroMedicoService {
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         try {
             // Buscamos el archivo como un "recurso" del sistema
-            var inputStream = getClass().getResourceAsStream("/com/emergencias/model/centros_alicante.json");
+            var inputStream = getClass().getResourceAsStream("/com/emergencias/resources/centros_alicante.json");
 
             if (inputStream == null) {
                 System.err.println("Error: El ClassLoader no encuentra el archivo en la ruta de paquetes.");
