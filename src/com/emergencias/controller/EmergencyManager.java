@@ -16,7 +16,7 @@ public class EmergencyManager {
 
         // Datos de usuario simulados
 
-        this.usuario = new UserData();
+        this.usuario = new UserData("Ana", "12345678Z", "García", "Asma", true, 28);
     }
 
     /*
