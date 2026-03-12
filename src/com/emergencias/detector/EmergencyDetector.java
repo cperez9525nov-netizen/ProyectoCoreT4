@@ -1,19 +1,18 @@
 package com.emergencias.detector;
 
 import java.util.Scanner;
+//Importamos la clase de unión entre las dos clases del directorio "detector"
+import com.emergencias.detector.SeverityAnalizer.NivelSeveridad;
 
 public class EmergencyDetector {
     private final Scanner scanner = new Scanner(System.in);
+    // Creamos una instancia del analizador para usarlo aquí
+    private final SeverityAnalizer analyzer = new SeverityAnalizer();
 
-    // Definimos los tipos de emergencia soportados
     public enum TipoEmergencia {
         INCENDIO, EXPLOSION, ACCIDENTE, INUNDACION, DESCONOCIDO
     }
 
-    /**
-     * Simula la detección de un evento mediante entrada de consola.
-     * @return El tipo de emergencia detectado.
-     */
     public TipoEmergencia detectEvent() {
         System.out.println("\n--- MONITOR DE SENSORES ACTIVO ---");
         System.out.println("Seleccione tipo de emergencia detectada:");
@@ -33,19 +32,18 @@ public class EmergencyDetector {
         };
     }
 
-    /**
-     * Verifica la gravedad según umbrales específicos para cada tipo.
-     * @param tipo El tipo de emergencia.
-     * @param magnitud Valor numérico que representa la escala (ej. grados, metros, fuerza).
-     * @return true si supera el umbral de gravedad.
-     */
-    public boolean validateSeverity(TipoEmergencia tipo, double magnitud) {
-        return switch (tipo) {
-            case INCENDIO -> magnitud > 45.0; // Grados Celsius detectados
-            case EXPLOSION -> magnitud > 0.5; // Presión de onda expansiva
-            case ACCIDENTE -> magnitud > 50.0; // Fuerza de impacto (G)
-            case INUNDACION -> magnitud > 1.0; // Metros de altura del agua
-            case DESCONOCIDO -> false;
-        };
+    //Usamos el analizador para obtener el nivel de severidad real de la emergencia
+
+    public void procesarDeteccion() {
+        TipoEmergencia tipo = detectEvent();
+
+        System.out.println("Introduzca la magnitud detectada(0 - 100):");
+        double magnitud = Double.parseDouble(scanner.nextLine());
+
+        // Aquí delegamos el trabajo al Analizer
+
+        NivelSeveridad nivel = analyzer.evaluateSeverity(tipo, magnitud);
+
+        System.out.println(">>> [ANÁLISIS] Tipo: " + tipo + " | Nivel de Severidad: " + nivel);
     }
 }

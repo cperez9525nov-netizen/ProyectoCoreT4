@@ -2,6 +2,7 @@ package com.emergencias.main;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.emergencias.detector.EmergencyDetector;
 import com.emergencias.controller.EmergencyManager;
 import com.emergencias.model.CentroMedico;
 import com.emergencias.controller.CentroMedicoService;
@@ -32,5 +33,15 @@ public class Main {
             System.out.println(centro); //llama el toString
         }
 
+        // --- AQUÍ VA A IR EL DETECTOR ---
+        System.out.println("\n--- SISTEMA LISTO PARA DETECTAR EMERGENCIAS ---");
+
+        // Instanciamos el detector
+        EmergencyDetector detector = new EmergencyDetector();
+
+        // Ejecutamos la detección (esto pedirá los datos por consola)
+        detector.procesarDeteccion();
+
+        System.out.println("\n--- FIN DEL PROGRAMA ---");
     }
 }
