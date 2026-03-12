@@ -1,6 +1,7 @@
 package com.emergencias.alert;
 
 import com.emergencias.model.EmergencyEvent;
+import com.emergencias.detector.SeverityAnalizer.NivelSeveridad;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -8,11 +9,18 @@ import java.io.PrintWriter;
 
 public class AlertSender {
 
-    /*
-     * Envía la notificación formal a los servicios de emergencia (112).
-     * Muestra el mensaje en consola y lo guarda en un archivo de log.
-     */
-    public void sendAlert(EmergencyEvent event) {
+
+     /* Envía la notificación formal a los servicios de emergencia (112).
+     Muestra el mensaje en consola y lo guarda en un archivo de log.*/
+
+    public void sendAlert(EmergencyEvent event, NivelSeveridad nivel) {
+        //Implementamos el mensaje según el nivel de severidad que se obtenga de la clase SeverityAnalizer
+        String prefijo = switch (nivel) {
+            case CRITICA -> "🚨 [MÁXIMA PRIORIDAD] ";
+            case ALTA -> "⚠️ [URGENTE] ";
+            default -> "ℹ️ [AVISO] ";
+        };
+
         String mensajeCentral = "--- ALERTA OFICIAL AL 112 ---\n" +
                 "TIPO: " + event.getTipoEmergencia() + "\n" +
                 "UBICACIÓN: " + event.getUbicacion() + "\n" +

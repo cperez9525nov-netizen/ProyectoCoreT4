@@ -10,9 +10,8 @@ import com.emergencias.controller.CentroMedicoService;
 public class Main {
     public static void main(String[] args) {
         System.out.println("--- INICIANDO SISTEMA DE GESTIÓN DE EMERGENCIAS ---");
-        EmergencyManager manager = new EmergencyManager();
-        manager.startSystem();
 
+        // ---INICIAMOS CARGA Y LECTURA CENTROS MÉDICOS ---
         //Instanciamos el servicio de lectura
         CentroMedicoService servicio = new CentroMedicoService();
 
@@ -24,23 +23,25 @@ public class Main {
         if (listaCargada != null) {
             listaCentros.addAll(listaCargada);
             System.out.println("Centros médicos encontrados: " + listaCentros.size());
+
+            //Trabajamos con el arraylist en el caso de que se hayan encontrado centros médicos cercanos
+            for (CentroMedico centro : listaCentros) {
+                System.out.println(centro); //llama el toString
+            }
         } else {
             System.out.println("No se encontraron centros médicos");
         }
 
-        //Trabajamos con el arraylist
-        for (CentroMedico centro : listaCentros) {
-            System.out.println(centro); //llama el toString
-        }
+        // --- INICIO DEL CONTROLADOR ---
+        EmergencyManager manager = new EmergencyManager();
 
-        // --- AQUÍ VA A IR EL DETECTOR ---
-        System.out.println("\n--- SISTEMA LISTO PARA DETECTAR EMERGENCIAS ---");
+        // Pasamos los datos que acabamos de leer del JSON
+        manager.setCentrosDisponibles(listaCentros);
 
-        // Instanciamos el detector
-        EmergencyDetector detector = new EmergencyDetector();
+        System.out.println("\n--- SISTEMA LISTO Y MONITORIZANDO ---");
 
-        // Ejecutamos la detección (esto pedirá los datos por consola)
-        detector.procesarDeteccion();
+        // Llamamos internamente al detector.detectEvent()
+        manager.startSystem();
 
         System.out.println("\n--- FIN DEL PROGRAMA ---");
     }
