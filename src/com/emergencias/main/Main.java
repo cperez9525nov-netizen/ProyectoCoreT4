@@ -2,10 +2,13 @@ package com.emergencias.main;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.emergencias.controller.PerfilUsuarioService;
 import com.emergencias.detector.EmergencyDetector;
 import com.emergencias.controller.EmergencyManager;
 import com.emergencias.model.CentroMedico;
 import com.emergencias.controller.CentroMedicoService;
+import com.emergencias.model.PerfilUsuario;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,8 +35,20 @@ public class Main {
             System.out.println("No se encontraron centros médicos");
         }
 
+        // CARGA DEL PERFIL DE USUARIO (Cristian)
+        PerfilUsuarioService servicioPerfil = new PerfilUsuarioService();
+        PerfilUsuario usuarioCristian = servicioPerfil.cargarPerfil();
+
+        if (usuarioCristian != null) {
+            System.out.println("Perfil de usuario detectado: " + usuarioCristian.getNombre() + " " + usuarioCristian.getApellidos());
+        } else {
+            System.out.println("No se pudo cargar el perfil de usuario.");
+            // Por si falla la carga, se puede crear un nuevo usuario aquí
+            usuarioCristian = new PerfilUsuario();
+        }
+
         // --- INICIO DEL CONTROLADOR ---
-        EmergencyManager manager = new EmergencyManager();
+        EmergencyManager manager = new EmergencyManager(usuarioCristian);
 
         // Pasamos los datos que acabamos de leer del JSON
         manager.setCentrosDisponibles(listaCentros);

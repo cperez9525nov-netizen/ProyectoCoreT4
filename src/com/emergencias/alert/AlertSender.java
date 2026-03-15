@@ -21,11 +21,15 @@ public class AlertSender {
             default -> "ℹ️ [AVISO] ";
         };
 
-        String mensajeCentral = "--- ALERTA OFICIAL AL 112 ---\n" +
-                "TIPO: " + event.getTipoEmergencia() + "\n" +
+        // Usamos el prefijo al principio y añadimos el contacto de emergencia
+        String mensajeCentral = "\n" + prefijo + "--- ALERTA OFICIAL AL 112 ---\n" +
+                "TIPO DE EVENTO: " + event.getTipoEmergencia() + "\n" +
+                "SEVERIDAD: " + nivel + "\n" +
                 "UBICACIÓN: " + event.getUbicacion() + "\n" +
-                "INFO MÉDICA: " + event.getDatosUsuario() + "\n" +
-                "-----------------------------";
+                "\n--- DATOS DEL PACIENTE ---\n" +
+                event.getDatosUsuario().toString() + "\n" + // Llama a tu toString con nombre, edad, grupo y patologías
+                "CONTACTO FAMILIAR: " + event.getDatosUsuario().getContactoEmergencia() + "\n" +
+                "-------------------------------------------";
 
         // Imprimir en consola para el usuario
         System.out.println(mensajeCentral);

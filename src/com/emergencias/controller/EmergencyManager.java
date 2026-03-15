@@ -5,24 +5,25 @@ import com.emergencias.detector.EmergencyDetector;
 import com.emergencias.detector.SeverityAnalizer;
 import com.emergencias.model.CentroMedico;
 import com.emergencias.model.EmergencyEvent;
-import com.emergencias.model.UserData;
+import com.emergencias.model.PerfilUsuario;
+
 import java.util.List;
 
 public class EmergencyManager {
     private EmergencyDetector detector;
     private AlertSender alertSender;
     private SeverityAnalizer analyzer;
-    private UserData usuario;
+    private PerfilUsuario datosUsuario;
     private List<CentroMedico> centrosDisponibles; //Lista de hospitales
 
-    public EmergencyManager() {
+    public EmergencyManager(PerfilUsuario usuarioCargado) {
         this.detector = new EmergencyDetector();
         this.alertSender = new AlertSender();
         this.analyzer = new SeverityAnalizer();
 
         // Datos de usuario simulados
 
-        this.usuario = new UserData();
+        this.datosUsuario = usuarioCargado; //Asignamos el Usuario que nos llega desde Main
     }
 
 
@@ -57,7 +58,7 @@ public class EmergencyManager {
                 EmergencyEvent evento = new EmergencyEvent(
                         tipo.toString(),
                         "Ubicación GPS: 40.4168, -3.7038 | HOSPITAL ASIGNADO: " + hospitalAsignado,
-                        usuario
+                        datosUsuario
                 );
 
                 // Enviamos la notificación de la emergencia que se ha producido y el nivel de severidad

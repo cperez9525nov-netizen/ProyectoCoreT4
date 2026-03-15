@@ -1,0 +1,20 @@
+{
+  "nombre": "Cristian",
+  "apellidos": "Pérez Beltrá",
+  "edad": 30,
+  "localidad": "Novelda",
+  "grupoSanguineo": "0+",
+  "patologias": [
+    "Diabetes",
+    "Asma",
+    "Hipertensión",
+    "Alergia respiratoria",
+    "Alergia cutánea",
+    "Alergia alimentaria",
+    "EPOC",
+    "Enfermedad mental",
+    "Transtorno neurológico y degenerativo",
+    "Enfermedad musculoesquelético"
+  ],
+  "contactoEmergencia": "666 666 666"
+}

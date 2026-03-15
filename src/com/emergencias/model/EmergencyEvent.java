@@ -5,12 +5,12 @@ import java.time.LocalDateTime;
 public class EmergencyEvent {
     private String tipoEmergencia;
     private String ubicacion;
-    private UserData datosUsuario;
+    private PerfilUsuario datosUsuario;
     private LocalDateTime fechaHora;
 
     //Constructores parametizados
 
-    public EmergencyEvent(String tipoEmergencia, String ubicacion, UserData datosUsuario) {
+    public EmergencyEvent(String tipoEmergencia, String ubicacion, PerfilUsuario datosUsuario) {
         this.tipoEmergencia = tipoEmergencia;
         this.ubicacion = ubicacion;
         this.datosUsuario = datosUsuario;
@@ -26,7 +26,7 @@ public class EmergencyEvent {
         return ubicacion;
     }
 
-    public UserData getDatosUsuario() {
+    public PerfilUsuario getDatosUsuario() {
         return datosUsuario;
     }
 
