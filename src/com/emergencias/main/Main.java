@@ -37,14 +37,13 @@ public class Main {
 
         // CARGA DEL PERFIL DE USUARIO (Cristian)
         PerfilUsuarioService servicioPerfil = new PerfilUsuarioService();
-        PerfilUsuario usuarioCristian = servicioPerfil.cargarPerfil();
+        PerfilUsuario usuarioCristian = servicioPerfil.obtenerPerfilCompleto("74221034W");
 
         if (usuarioCristian != null) {
-            System.out.println("Perfil de usuario detectado: " + usuarioCristian.getNombre() + " " + usuarioCristian.getApellidos());
+            System.out.println("Perfil cargado desde la Base de Datos: " + usuarioCristian.getNombre() + " " + usuarioCristian.getApellidos());
         } else {
-            System.out.println("No se pudo cargar el perfil de usuario.");
-            // Por si falla la carga, se puede crear un nuevo usuario aquí
-            usuarioCristian = new PerfilUsuario();
+            System.out.println("No se encontró en la BD. Intentando carga de emergencia desde JSON...");
+            usuarioCristian = servicioPerfil.cargarPerfil(); // Intento de respaldo
         }
 
         // --- INICIO DEL CONTROLADOR ---

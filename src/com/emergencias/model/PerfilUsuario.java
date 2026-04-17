@@ -9,6 +9,7 @@ public class PerfilUsuario {
     private String nombre;
     private String apellidos;
     private int edad;
+    private String telefono;
     private String localidad;
     private String grupoSanguineo;
     private List<String> patologias;
@@ -27,6 +28,7 @@ public class PerfilUsuario {
     public int getEdad() {
         return edad;
     }
+    public String getTelefono() {return telefono;}
     public String getLocalidad() {
         return localidad;
     }
@@ -54,6 +56,7 @@ public class PerfilUsuario {
             this.edad = edad;
         }
     }
+    public void setTelefono(String telefono) {this.telefono = telefono;}
     public void setLocalidad(String localidad) {
         this.localidad = localidad;
     }
