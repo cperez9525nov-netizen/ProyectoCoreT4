@@ -4,7 +4,7 @@ import com.emergencias.model.PerfilUsuario;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.*; // IMPORTANTE: Para Connection, PreparedStatement, etc.
+import java.sql.*;
 import java.util.List;
 
 public class PerfilUsuarioService {
