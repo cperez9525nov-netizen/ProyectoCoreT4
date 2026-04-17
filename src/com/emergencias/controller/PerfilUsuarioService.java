@@ -23,7 +23,6 @@ public class PerfilUsuarioService {
     }
 
     private PerfilUsuario cargarDesdeBD(String dni) {
-        // Asegúrate de que la tabla se llama 'Personas' en tu SQL
         String sql = "SELECT * FROM Personas WHERE dni = ?";
 
         try (Connection con = DataBaseConnection.getConnection();
