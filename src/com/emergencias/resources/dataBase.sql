@@ -24,7 +24,7 @@ CREATE TABLE ContactoConfianza (
 );
 
 
---Insertamos los datos de la tabla Personas--
+/* Insertamos los datos de la tabla Personas-- */
 
 
 INSERT INTO Personas VALUES
@@ -39,7 +39,7 @@ INSERT INTO Personas VALUES
                          ('189822891Q', 'Aurica', 'Horga', '789191236', 'Ninguna', 71, 'Aditivos alimenticios');
 
 
---Insertamos los datos de la tabla ContactoConfianza---
+ /* Insertamos los datos de la tabla ContactoConfianza */
 
 
 INSERT INTO ContactoConfianza VALUES
